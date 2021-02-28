@@ -4,7 +4,9 @@
 
 Deploy Macro stack
 ```bash
+
 aws cloudformation deploy --stack-name ami-filler-macro --template-file macro.yaml --capabilities CAPABILITY_IAM
+
 ```
 Deploy Launch Template stack
 ```bash

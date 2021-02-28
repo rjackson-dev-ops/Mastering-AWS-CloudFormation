@@ -1,0 +1,11 @@
+{
+    "accountId": "489445168095",
+    "fragment": {},
+    "transformId": "489445168095::AMIFiller",
+    "requestId": "f252e0ed-4454-4447-a70f-6cccb12e6f1f",
+    "region": "us-east-1",
+    "params": {
+        "OSFamily": "ubuntu"
+    },
+    "templateParameterValues": {}
+}

@@ -36,7 +36,12 @@ Resources:
       Role: !GetAtt MacroFunctionRole.Arn
       Code:
         ZipFile: !Sub |
+          import logging
+          import json
           import boto3
+          logger = logging.getLogger()
+          logger.setLevel(logging.INFO)
+
           image_names = {
               "amazonlinux2": "amzn2-ami-hvm-2.0.20191217.0-x86_64-gp2",
               "ubuntu": "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20200112",
@@ -50,6 +55,7 @@ Resources:
               return resp['Images'][0]['ImageId']
           def lambda_handler(event, context):
               response = {}
+              logger.info(json.dumps(event))
               response['requestId'] = event['requestId']
               response['fragment'] = {"ImageId": ""}
               response['status'] = "SUCCESS"
